@@ -1,5 +1,5 @@
 # StarspotMapping
 
-Supplementary figures for joint posteriors of all parameters in [Ikuta et al. 2020](https://ui.abs.harvard.edu/abs/2020ApJ...902...73I/abstract)
+Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020](https://ui.abs.harvard.edu/abs/2020ApJ...902...73I/abstract))
 
-Flare tables in [Ikuta et al., submitted to ApJ](https://ui.adsabs.harvard.edu/abs/2021tsc2.confE.106I/abstract)
+Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al., ApJ in press])
