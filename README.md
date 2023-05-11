@@ -12,7 +12,7 @@ Flare tables and Supplementary figures for joint posteriors of models in Appendi
 
 
 
-## Erratum and Remarks 
+## Erratum and Remarks (as of 23/5/11)
 
 ### Paper I
 
