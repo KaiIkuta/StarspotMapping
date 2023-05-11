@@ -16,11 +16,11 @@ Flare tables and Supplementary figures for joint posteriors of models in Appendi
 
 ### Paper I
 
-Page 3: In Equation 11, csc_k -> csc beta_k
+Page 3: In Equation 11, $\csc_k$ -> $\csc \beta_k$
 
-Page 4: In Equation 15, multiply Lambda_k (deg) by pi/180 to the unit of (rad)
+Page 4: In Equation 15, multiply $\Lambda_k$ (deg) by $\pi/180$ to the unit of (rad)
 
-Page 5, 6: In the footnotes of Table 1 and 2, the log uniform (Jeffreys) prior is described by 1/theta(log b/a) (correct representation in Tables 2 to 6 of Paper II)
+Page 5, 6: In the footnotes of Table 1 and 2, the log uniform (Jeffreys) prior is described by $1/(\theta \log(b/a))$ (correct representation in Paper II)
 
 
 ### Paper II:
