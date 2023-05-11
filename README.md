@@ -23,6 +23,6 @@ Page 4: In Equation 15, multiply $\Lambda_k$ (deg) by $\pi/180$ to the unit of (
 Page 5, 6: In the footnotes of Table 1 and 2, the log uniform (Jeffreys) prior is described by $1/(\theta \log(b/a))$ (correct representation in Paper II)
 
 
-### Paper II:
+### Paper II
 
 Page 4: Above Equation 1, According not to Shibayama et al (2013) but to Maehara et al. (2021)
