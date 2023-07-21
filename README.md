@@ -2,11 +2,11 @@
 
 ## Paper I
 
-Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.abs.harvard.edu/abs/2020ApJ...902...73I/abstract))
+Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract))
 
 ## Paper II
 
-Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al., 2023, 648, 64](https://iopscience.iop.org/article/10.3847/1538-4357/acbd36))
+Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al., 2023, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
 
 
 
