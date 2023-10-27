@@ -1,5 +1,8 @@
 # StarspotMapping
 
+#The code to calculate the spotted flux is available as "macula.py" (version 0.0.0 released on 2023/10/27)
+
+
 ## Paper I
 
 Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract))
