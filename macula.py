@@ -2,8 +2,6 @@
 #This code is based on macula code described by analytic formulae in Kipping (2012)
 #Released version 0.0.0 on 2023/10/27
 
-
-
 import numpy as np
 
 #The example parameters are set in the case of the two-spot model for EV Lac Cycle 2 (Table 6 in Ikuta et al. 2023)
@@ -37,8 +35,11 @@ life = np.array([0, 0])
 #Reference time
 t_ref = np.array([27/2., 27/2.])
 
+
+#Two-min cadence
+cad = 0.00138888888
 #time
-t = np.linspace(0,27,100)
+t = np.linspace(0,23.048,int(23.048/cad))
 
 #Quadratic limb-darkening case (Appendix A in Ikuta 23)
 #u1, u2 = 0.16, 0.44
