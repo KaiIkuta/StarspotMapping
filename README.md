@@ -1,6 +1,6 @@
 # StarspotMapping
 
-### The code to calculate the spotted flux is available as "macula.py" (version 0.0.0 released on 2023/10/27)
+### The code to calculate the spotted flux is available as "macula.py" (version 0.0.0 on 2023/10/27)
 
 
 ## Paper I
