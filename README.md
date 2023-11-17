@@ -1,7 +1,7 @@
 # StarspotMapping
 
-### The code to calculate the spotted flux is available in "macula.py" (version 0.0.0 on 2023/10/27)
-
+### The code to calculate the spotted flux is available in "macula.py" (version 0.0.0 on 23/10/27)
+### The code to visualize the hemisphere is also available in "visualize.py" (version 0.0.0 on 23/11/17)
 
 ## Paper I
 
