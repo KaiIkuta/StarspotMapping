@@ -7,8 +7,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 
-#Visualize time
-t_vis= 0
+#Visualized time
+t_vis = 0
 
 fig = plt.figure(figsize=(6,6),tight_layout=True)
 plt.rcParams['legend.fontsize']=32
