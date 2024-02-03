@@ -13,10 +13,6 @@ Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020
 
 Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al., 2023, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
 
-## Paper III?
-
-I have been implementing the code of the starspot mapping with JAX/NumPyro (Ikuta et al., in preparation).
-
 
 
 ## Erratum and Remarks (as of 24/02/03)
