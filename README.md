@@ -21,7 +21,7 @@ Flare tables and Supplementary figures for joint posteriors of models in Appendi
 
 Page 3: In Equation 11, $\csc_k$ -> $\csc \beta_k$
 
-Page 3: $\beta_l = \exp \{-7(l-1)/2\}$
+Page 3: $\beta_l = \exp \{ -7(l-1)/2 \}$
 
 Page 4: In Equation 15, multiply $\Lambda_k$ (deg) by $\pi/180$ to the unit of (rad)
 
