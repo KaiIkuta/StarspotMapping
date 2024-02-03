@@ -3,6 +3,8 @@
 ### The code to calculate the spotted flux is available in "macula.py" (version 0.0.0 on 23/10/27)
 ### The code to visualize the hemisphere is also available in "visualize.py" (version 0.0.0 on 23/11/17)
 
+I have been implementing the code of starspot mapping with JAX/NumPyro (Ikuta et al., in preparation).
+
 ## Paper I
 
 Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract))
