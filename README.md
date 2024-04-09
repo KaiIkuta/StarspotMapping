@@ -13,9 +13,9 @@ Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020
 
 ## Paper II
 
-Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al. 2023, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
+Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al. 2023, ApJ, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
 
-Applied for quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al., 2024](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
+Applied for quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al. 2024, MNRAS](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
 
 
 
