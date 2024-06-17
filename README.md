@@ -15,8 +15,11 @@ Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020
 
 Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al. 2023, ApJ, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
 
-Applied for quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al. 2024, MNRAS](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
+## Applications
 
+Quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al. 2024, MNRAS](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
+
+Delving into the relation with superflares on a young solar-type star (Ikuta et al., in prep. for ApJ) 
 
 
 ## Erratum and Remarks (as of 24/02/03)
