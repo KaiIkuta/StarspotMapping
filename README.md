@@ -19,9 +19,9 @@ Flare tables and Supplementary figures for joint posteriors of models in Appendi
 
 Quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al. 2024, MNRAS, 530, 167](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
 
-Delving into the relation with a prominence eruption on a young solar-type star ([Namekata, Ikuta et al. 2024, ApJ in press](https://arxiv.org/abs/2410.05523))
+Delving into the relation with a prominence eruption on a young solar-type star ([Namekata, Ikuta et al. 2024, ApJ, 976, 255](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract))
 
-Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star (Ikuta et al., in prep. for ApJ) 
+Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al., in prep. for ApJ](https://ui.adsabs.harvard.edu/abs/2024tsc3.confE..12I/abstract)) 
 
 
 ## Erratum and Remarks (as of 24/02/03)
@@ -40,3 +40,5 @@ Page 5, 6: In the footnotes of Table 1 and 2, the log uniform (Jeffreys) prior i
 ### Paper II
 
 Page 4: Above Equation 1, According not to Shibayama et al (2013) but to Maehara et al. (2021)
+
+Page 9: The values of the reduced chi-square and p-value are incorrect (The conclusion does not change).
