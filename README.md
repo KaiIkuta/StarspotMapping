@@ -24,7 +24,7 @@ Delving into the relation with a prominence eruption on a young solar-type star 
 Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al., in prep. for ApJ](https://ui.adsabs.harvard.edu/abs/2024tsc3.confE..12I/abstract)) 
 
 
-## Erratum and Remarks (as of 24/02/03)
+## Erratum and Remarks (as of 25/02/07)
 
 ### Paper I
 
