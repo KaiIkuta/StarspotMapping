@@ -21,9 +21,11 @@ Quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et 
 
 Delving into the relation with a prominence eruption on a young solar-type star ([Namekata, Ikuta et al. 2024, ApJ, 976, 255](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract))
 
-Blue/Red asymmetries from superflares on an M-dwarf flare star YZ CMi (Kajikiya, Namekata, Notsu, Ikuta et al. 2025, 985, 136)
+Blue/Red asymmetries from superflares on an M-dwarf flare star YZ CMi ([Kajikiya, Namekata, Notsu, Ikuta et al. 2025, 985, 136](https://iopscience.iop.org/article/10.3847/1538-4357/adce7d))
 
-Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al., in prep. for ApJ](https://ui.adsabs.harvard.edu/abs/2024tsc3.confE..12I/abstract)) 
+Possible postflare loop from a superflare on an M-dwarf flare star EV Lac (Ichihara, ..., Ikuta et al., to be submitted)
+
+Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al., to be submitted](https://ui.adsabs.harvard.edu/abs/2024tsc3.confE..12I/abstract)) 
 
 
 ## Erratum and Remarks (as of 25/02/07)
