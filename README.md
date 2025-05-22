@@ -45,4 +45,4 @@ Page 5, 6: In the footnotes of Table 1 and 2, the log uniform (Jeffreys) prior i
 
 Page 4: Above Equation 1, According not to Shibayama et al (2013) but to Maehara et al. (2021)
 
-Page 9: The values of the reduced chi-square and p-value are incorrect (The conclusion does not change).
+Page 9: The values of the reduced chi-square and p-value are incorrect (The conclusion does not change; see [Kajikiya et al. 2025b](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract)).
