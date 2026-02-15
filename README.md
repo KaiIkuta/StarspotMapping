@@ -23,13 +23,15 @@ Delving into the relation with a prominence eruption on a young solar-type star 
 
 Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al., submitted to ApJ](https://ui.adsabs.harvard.edu/abs/2024tsc3.confE..12I/abstract)) 
 
+Spot map and activity on high-resolution spectrum for a RS CVn star (Nakasone et al., in prep.)
+
 ## Related papers
 
 Blue/Red asymmetries from superflares on an M-dwarf flare star YZ CMi ([Kajikiya, Namekata, Notsu, Ikuta et al. 2025, ApJ, 985, 136](https://ui.adsabs.harvard.edu/abs/2025ApJ...985..136K/abstract))
 
-Probable postflare loop from a superflare on an M-dwarf flare star EV Lac ([Ichihara, ..., Ikuta et al. 2025, PASJ, 77, XXX](https://ui.adsabs.harvard.edu/abs/2025PASJ..tmp...85I/abstract))
+Probable postflare loop from a superflare on an M-dwarf flare star EV Lac ([Ichihara, ..., Ikuta et al. 2025, PASJ, 77, 1025](https://ui.adsabs.harvard.edu/abs/2025PASJ...77.1025I/abstract))
 
-
+Joint Doppler imaging with spot mapping on a K-dwarf flare star PW And ([Lee, ..., Ikuta et al. 2026, A&A, in press](https://ui.adsabs.harvard.edu/abs/2025arXiv251112190L/abstract))
 
 
 ## Erratum and Remarks (as of 25/02/07)
