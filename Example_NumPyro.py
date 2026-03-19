@@ -113,8 +113,8 @@ def spotted_flux(phi, lam, period,kappa,radius,t_ref,ing,eg,life,t):
     flux_area += 2./3.*flux_spot[1]*(zeta_pos*zeta_pos+zeta_pos*zeta_neg+zeta_neg*zeta_neg)/(zeta_pos+zeta_neg+eps)
     flux_area += 1./2.*flux_spot[3]*(zeta_pos*zeta_pos+zeta_neg*zeta_neg)
     #If nonlinear limb-darkening law
-    flux_area += 4./5.*flux_spot[0]*(zeta_pos*zeta_pos*jnp.sqrt(zeta_pos+eps)-zeta_neg*zeta_neg*jnp.sqrt(zeta_neg+eps))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps)
-    flux_area += 4./7.*flux_spot[2]*(zeta_pos*zeta_pos*zeta_pos*jnp.sqrt(zeta_pos+eps)-zeta_neg*zeta_neg*zeta_neg*jnp.sqrt(zeta_neg+eps))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps)
+    flux_area += 4./5.*flux_spot[0]*(zeta_pos*zeta_pos*jnp.sqrt(zeta_pos+eps)-zeta_neg*zeta_neg*jnp.sqrt(zeta_neg+eps))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps) ###Fixed
+    flux_area += 4./7.*flux_spot[2]*(zeta_pos*zeta_pos*zeta_pos*jnp.sqrt(zeta_pos+eps)-zeta_neg*zeta_neg*zeta_neg*jnp.sqrt(zeta_neg+eps))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps) ###Fixed
     return projected_area(alpha,beta)*flux_area
 
 #Relative flux (Equation 19 in Ikuta 20)
