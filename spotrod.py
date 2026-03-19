@@ -38,7 +38,6 @@ def integratetransit(
 
 
     def scan_body(carry, step_inputs):
-        """1タイムステップ (t) 分のフラックス計算"""
         px, py, z_t, pa_t = step_inputs
         
         values = jnp.pi - pa_t
