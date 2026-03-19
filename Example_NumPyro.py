@@ -1,6 +1,7 @@
 #Inference of parameters in macula.py with JAX/NumPyro
 #macula.py may be updated to module for user-friendly code
 #Released version 0.0.0 on 2024/02/14
+#Fixed the divergence on 2026/03/19
 
 import pandas as pd
 import jax
@@ -29,6 +30,11 @@ from numpyro.contrib.tfp.mcmc import TFPKernel
 ### Spotted flux (macula.py optimized for fast computation with JAX) 
 
 
+###Fix
+#infinitesimal to circumvent the divergence of the likelihood
+eps = 1e-15
+###
+
 #Spot relative intensity
 f_spot = 0.48
 #Stellar inclination
@@ -56,9 +62,7 @@ def cos_beta(phi,lam,period,kappa,t):
     phase =jnp.dot((2.*jnp.pi*t/period).reshape(-1,1),(1-kappa*jnp.sin(phi)*jnp.sin(phi)).reshape(1,-1)) #(num_t,1)*(1,num_phi) = (num_t,num_phi)
     phase = phase + jnp.dot(jnp.ones([t.size]).reshape(-1,1),lam.reshape(1,-1))
     z = z + jnp.dot(jnp.ones([t.size]).reshape(-1,1),jnp.sin(incl)*jnp.cos(phi).reshape(1,-1))*jnp.cos(phase)
-    z =jnp.where(z<-1.,-1.,z)
-    z =jnp.where(z>1.,1.,z)
-    return z
+    return jnp.clip(z, -1.0 + eps, 1.0 - eps) ###Fixed
 
 
 #Projected area (Equation 11 in Ikuta 20) with the shape of (data point, spot_number)
@@ -66,30 +70,29 @@ def cos_beta(phi,lam,period,kappa,t):
 @jax.jit
 def projected_area(alpha,beta):
     # the middle term of the second case
-    area = -jnp.cos(alpha)*jnp.cos(beta)/(jnp.sin(alpha)*jnp.sin(beta)+1e-15)
-    area =jnp.where(area<-1.,-1.,area)
-    area =jnp.where(area>1.,1.,area)
+    area = -jnp.cos(alpha)*jnp.cos(beta)/(jnp.sin(alpha)*jnp.sin(beta)+eps)
+    area = jnp.clip(area, -1.0 + eps, 1.0 - eps) ###Fixed
     area =jnp.arccos(area)
     area *=jnp.cos(beta)*jnp.sin(alpha)*jnp.sin(alpha)
 
-    beta_alpha =jnp.cos(alpha)/(jnp.sin(beta)+1e-15)
-    beta_alpha =jnp.where(beta_alpha>1.,1.,beta_alpha)
+    beta_alpha =jnp.cos(alpha)/(jnp.sin(beta)+eps)
+    beta_alpha = jnp.clip(beta_alpha, -1+eps, 1.-eps) ###Fixed
     # former and latter term of the second case (in case of the first/third case, return 0)
-    area +=jnp.arccos(beta_alpha) -jnp.cos(alpha)*jnp.sin(beta)*jnp.sqrt(1-beta_alpha*beta_alpha+1e-15)
+    area +=jnp.arccos(beta_alpha) -jnp.cos(alpha)*jnp.sin(beta)*jnp.sqrt(1-beta_alpha*beta_alpha+eps)
     return area/jnp.pi
 
 
 #Angular radius of spot (Equation 14 in Ikuta 20) with the shape of (data point, spot_number)
 @jax.jit
 def alpha_t(radius,t_ref,ing,eg,life,t):
-  t_before =jnp.dot(t.reshape(-1,1),jnp.ones([radius.size]).reshape(1,-1))
-  t_before = ((t_before-t_ref)+life/2.)/ing
-  t_after =jnp.dot(t.reshape(-1,1),jnp.ones([radius.size]).reshape(1,-1))
-  t_after = ((t_ref-t_after)+life/2.)/eg
-  s =jnp.where(t_before<t_after,t_before,t_after) +1.
-  s =jnp.where(s<1.,s,1.)
-  s *=radius
-  s =jnp.where(s>0.,s,0.)
+    t_before =jnp.dot(t.reshape(-1,1),jnp.ones([radius.size]).reshape(1,-1))
+    t_before = ((t_before-t_ref)+life/2.)/ing
+    t_after =jnp.dot(t.reshape(-1,1),jnp.ones([radius.size]).reshape(1,-1))
+    t_after = ((t_ref-t_after)+life/2.)/eg
+    s =jnp.where(t_before<t_after,t_before,t_after) +1.
+    s =jnp.where(s<1.,s,1.)
+    s *=radius
+    s =jnp.where(s>0.,s,0.)
   return s
 
 #The third term of the flux from spots (Equation 10 in Ikuta 20) with the shape of (data point, spot_number)
@@ -107,11 +110,11 @@ def spotted_flux(phi, lam, period,kappa,radius,t_ref,ing,eg,life,t):
     zeta_neg =jnp.where(zeta_neg<0.,0.,zeta_neg)
 
     flux_area = flux_star
-    flux_area += 2./3.*flux_spot[1]*(zeta_pos*zeta_pos+zeta_pos*zeta_neg+zeta_neg*zeta_neg)/(zeta_pos+zeta_neg+1e-15)
+    flux_area += 2./3.*flux_spot[1]*(zeta_pos*zeta_pos+zeta_pos*zeta_neg+zeta_neg*zeta_neg)/(zeta_pos+zeta_neg+eps)
     flux_area += 1./2.*flux_spot[3]*(zeta_pos*zeta_pos+zeta_neg*zeta_neg)
     #If nonlinear limb-darkening law
-    flux_area += 4./5.*flux_spot[0]*(zeta_pos*zeta_pos*jnp.sqrt(zeta_pos)-zeta_neg*zeta_neg*jnp.sqrt(zeta_neg))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+1e-15)
-    flux_area += 4./7.*flux_spot[2]*(zeta_pos*zeta_pos*zeta_pos*jnp.sqrt(zeta_pos)-zeta_neg*zeta_neg*zeta_neg*jnp.sqrt(zeta_neg))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+1e-15)
+    flux_area += 4./5.*flux_spot[0]*(zeta_pos*zeta_pos*jnp.sqrt(zeta_pos)-zeta_neg*zeta_neg*jnp.sqrt(zeta_neg))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps)
+    flux_area += 4./7.*flux_spot[2]*(zeta_pos*zeta_pos*zeta_pos*jnp.sqrt(zeta_pos)-zeta_neg*zeta_neg*zeta_neg*jnp.sqrt(zeta_neg))/(zeta_pos*zeta_pos-zeta_neg*zeta_neg+eps)
     return projected_area(alpha,beta)*flux_area
 
 #Relative flux (Equation 19 in Ikuta 20)
