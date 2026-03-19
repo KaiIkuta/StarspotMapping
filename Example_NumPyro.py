@@ -93,7 +93,7 @@ def alpha_t(radius,t_ref,ing,eg,life,t):
     s =jnp.where(s<1.,s,1.)
     s *=radius
     s =jnp.where(s>0.,s,0.)
-  return s
+    return s
 
 #The third term of the flux from spots (Equation 10 in Ikuta 20) with the shape of (data point, spot_number)
 @jax.jit
