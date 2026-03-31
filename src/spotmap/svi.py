@@ -11,8 +11,9 @@ rng_key, svi_key, sample_key = jax.random.split(jax.random.PRNGKey(159613900), 3
 svi_result = svi.run(svi_key, 10000, time1=t1, time2=t2, flux_obs=f, flux_err=ferr)
 
 neutra = NeuTraReparam(guide, svi_result.params)
-latent_param_names = ["log_p", "kappa", "lat1", "lat2", "lon", "rad", "tref", "log_em", "log_dec"]
+latent_param_names = ["log_p", "kappa", "lat", "lon", "rad", "tref", "log_em", "log_dec"]
 model_neutra = handlers.reparam(numpyro_model, config=lambda site: neutra if site["name"] in latent_param_names else None)
+
 
 
 #sampling from approximated posterior 
