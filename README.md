@@ -21,7 +21,7 @@ Quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et 
 
 Delving into the relation with a prominence eruption on a young solar-type star ([Namekata, Ikuta et al. 2024, ApJ, 976, 255](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract))
 
-Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al. 2026, ApJ in press](https://ui.adsabs.harvard.edu/abs/2026arXiv260215979I/abstract)) 
+Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al. 2026, ApJ, 1001, 18](https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...18I/abstract)) 
 
 Spot map and activity on high-resolution spectrum for a RS CVn star (Nakasone et al., in prep.)
 
