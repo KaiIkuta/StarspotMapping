@@ -19,7 +19,7 @@ n_annuli = 300
 r_annuli = jnp.linspace(1e-5, 0.99999, n_annuli)
 mu_r = jnp.sqrt(1.0 - r_annuli**2)
 f_r = 1.0 - ld_star[0]*(1.0 - mu_r**0.5) - ld_star[1]*(1.0 - mu_r) - ld_star[2]*(1.0 - mu_r**1.5) - ld_star[3]*(1.0 - mu_r**2)
-oot_base_flux = jnp.sum(jnp.pi * r_annuli * f_r) # スポット無しの基準フラックス
+oot_base_flux = jnp.sum(jnp.pi * r_annuli * f_r)
 
 
 @jax.jit
