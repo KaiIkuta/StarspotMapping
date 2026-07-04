@@ -12,7 +12,6 @@ authors = [
 requires-python = ">=3.8"
 
 dependencies = [
-    "numpy",
     "jax",
     "numpyro",
     "jaxoplanet"
