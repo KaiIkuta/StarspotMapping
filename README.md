@@ -7,11 +7,11 @@
 
 ##Installation
 ```bash
-!pip install git+https://github.com/KaiIkuta/StarspotMapping.git
+pip install git+https://github.com/KaiIkuta/StarspotMapping.git
 ```
 
-##Import
-```bash
+##Import (To be uploaded)
+```python
 import spotmap
 from spotmap import macula_jax
 ```
