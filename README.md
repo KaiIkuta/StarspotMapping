@@ -5,6 +5,17 @@
 ### The inference code with a parallel tempering or No U-turn sampler in JAX/NumPyro is also available in "Example_NumPyro.py" (version 0.0.0 on 24/02/14)
 
 
+##Installation
+```bash
+!pip install git+https://github.com/KaiIkuta/StarspotMapping.git
+```
+
+##Import
+```bash
+import spotmap
+from spotmap import macula_jax
+```
+
 
 
 ## Paper I
