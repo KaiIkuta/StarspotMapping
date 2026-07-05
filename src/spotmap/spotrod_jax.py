@@ -4,8 +4,7 @@
 import jax
 import jax.numpy as jnp
 from jaxoplanet.orbits.keplerian import Central, Body, System
-from spotmap import macula_jax
-
+from spotmap.macula_jax import alpha_t
 
 eps = 1e-15
 f_spot = 0.48
