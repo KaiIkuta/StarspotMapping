@@ -3,7 +3,7 @@
 
 import jax
 import jax.numpy as jnp
-from jaxoplanet.orbits import KeplerianOrbit
+from jaxoplanet.orbits.keplerian import Central, Body, System
 from spotmap import macula_jax
 
 
@@ -85,11 +85,23 @@ def spot_sky_coords(phi, lam, period, kappa, t):
 
 @jax.jit
 def planet_sky_coords(period_orb, t0, b, r_p, ecc, omega, t):
-
-    orbit = KeplerianOrbit(period=period_orb, time_transit=t0, impact_param=b, radius=r_p, eccentricity=ecc, omega_peri=omega)
-    x_p, y_p, z_p_los = orbit.relative_position(t)
-
+    body = Body(
+        period=period_orb, 
+        time_transit=t0, 
+        impact_param=b, 
+        radius=r_p, 
+        eccentricity=ecc, 
+        omega_peri=omega
+    )
+    system = System(Central()).add_body(body)
+    
+    x_sys, y_sys, z_sys_los = system.relative_position(t)
+    x_p = x_sys[0]
+    y_p = y_sys[0]
+    z_p_los = z_sys_los[0]
+    
     z_p = jnp.where(z_p_los > 0, jnp.sqrt(x_p**2 + y_p**2), 1000.0)
+    
     return x_p, y_p, z_p
 
 
