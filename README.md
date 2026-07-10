@@ -47,22 +47,21 @@ flux = spotflux().relative_flux(params, t_array)
 
 
 ## Paper I
-
-Supplementary figures for joint posteriors of all parameters ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract))
+Implementation of spotted flux with variable spot toward Kepler and TESS light curve ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract)):
+Supplementary figures for joint posteriors of all parameters 
 
 ## Paper II
-
-Flare tables and Supplementary figures for joint posteriors of models in Appendix A ([Ikuta et al. 2023, ApJ, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract))
+Delving into the relation with flares on M-dwarf flare stars AU Mic, YZ CMi, and EV Lac ([Ikuta et al. 2023, ApJ, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract)):
+Flare tables and Supplementary figures for joint posteriors of models in Appendix A 
 
 ## Applications
 
-Quantifying the Transit Light Source Effect of a young M-dwarf ([Mori, Ikuta et al. 2024, MNRAS, 530, 167](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
+Quantifying the Transit Light Source Effect of a young M-dwarf K2-25 ([Mori, Ikuta et al. 2024, MNRAS, 530, 167](https://ui.adsabs.harvard.edu/abs/2024MNRAS.tmp..863M/abstract))
 
-Delving into the relation with a prominence eruption on a young solar-type star ([Namekata, Ikuta et al. 2024, ApJ, 976, 255](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract))
+Delving into the relation with a prominence eruption on a young solar-type star EK Dra ([Namekata, Ikuta et al. 2024, ApJ, 976, 255](https://ui.adsabs.harvard.edu/abs/2024ApJ...976..255N/abstract))
 
-Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star ([Ikuta et al. 2026, ApJ, 1001, 18](https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...18I/abstract)) 
+Exploring the relation with Zeeman Doppler Imaging and multiwavelength variability for a young solar-type star EK Dra ([Ikuta et al. 2026, ApJ, 1001, 18](https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...18I/abstract)) 
 
-Spot map and activity on high-resolution spectrum for a RS CVn star (Nakasone et al., in prep.)
 
 ## Related papers
 
@@ -70,8 +69,11 @@ Blue/Red asymmetries from superflares on an M-dwarf flare star YZ CMi ([Kajikiya
 
 Probable postflare loop from a superflare on an M-dwarf flare star EV Lac ([Ichihara, ..., Ikuta et al. 2025, PASJ, 77, 1025](https://ui.adsabs.harvard.edu/abs/2025PASJ...77.1025I/abstract))
 
-Joint Doppler imaging with spot mapping on a K-dwarf flare star PW And ([Lee, ..., Ikuta et al. 2026, A&A, 707, A24](https://ui.adsabs.harvard.edu/abs/2026A%26A...707A..24L/abstract))
+Joint Doppler imaging with spot mapping on a K-dwarf flare star PW And ([Lee, ..., Ikuta et al. 2026, A&A, 707, A24](https://ui.adsabs.harvard.edu/abs/2026A%26A...707A..24L/abstract)) and a young solar-type star EK Dra (Lee et al., in prep.)
 
+Spot map and activity on high-resolution spectrum for a RS CVn star (Nakasone et al., in prep.)
+
+Dynamical Doppler imaging with spot mapping ([jaxsmap](https://github.com/KaiIkuta/jaxsmap); Ikuta et al., in prep.)
 
 ## Erratum and Remarks (as of 25/02/07)
 
