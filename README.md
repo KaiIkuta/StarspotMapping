@@ -18,8 +18,6 @@ import jax.numpy as jnp
 import spotmap
 from spotmap import spotflux
 
-macula = spotflux()
-
 #Time series in 20 days
 t_array = jnp.linspace(0, 20, 1000)
 
@@ -42,7 +40,7 @@ params = {
     "ld_spot": jnp.array([3.0, -4.54, 4.01, -1.35]) # Spot limb-darkening coefficients
 }
 
-flux = spotflux.relative_flux(params, t_array)
+flux = spotflux().relative_flux(params, t_array)
 
 ```
 
