@@ -2,7 +2,7 @@ import jax
 import jax.numpy as jnp
 from functools import partial
 
-class SpotGeometry:
+class spotgeometry:
     def __init__(self, eps=1e-15):
         self.eps = eps
 
