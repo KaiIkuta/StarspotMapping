@@ -48,10 +48,12 @@ flux = spotflux().relative_flux(params, t_array)
 
 ## Paper I
 Implementation of spotted flux with variable spot toward Kepler and TESS light curve ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract)):
+
 Supplementary figures for joint posteriors of all parameters 
 
 ## Paper II
 Delving into the relation with flares on M-dwarf flare stars AU Mic, YZ CMi, and EV Lac ([Ikuta et al. 2023, ApJ, 648, 64](https://ui.adsabs.harvard.edu/abs/2023ApJ...948...64I/abstract)):
+
 Flare tables and Supplementary figures for joint posteriors of models in Appendix A 
 
 ## Applications
