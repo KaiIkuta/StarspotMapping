@@ -14,8 +14,36 @@ pip install git+https://github.com/KaiIkuta/StarspotMapping.git
 ## Import (To be uploaded)
 
 ```python
+import jax.numpy as jnp
 import spotmap
-from spotmap import macula_jax
+from spotmap import spotflux
+
+macula = spotflux()
+
+#Time series in 20 days
+t_array = jnp.linspace(0, 20, 1000)
+
+#Parameters
+params = {
+    "radius": jnp.array([0.1]),        # Spot radius (rad)
+    "phi": jnp.array([1.0]),           # Spot latitude (rad)
+    "lam": jnp.array([0.0]),           # Spot longitude (rad)
+    "period_rot": 11.05,               # Stellar equatorial period (day)
+    "incl": jnp.deg2rad(90.0),         # Stellar inclination (rad)
+    "ld_star": jnp.array([3.0, -4.54, 4.01, -1.35]), # Stellar limb-darkening coefficients
+    "f_spot": 0.48,                    # Spot intensity
+    
+    # If spot size is variable (if skipped, stable spot size is adopted)
+    "t_ref": jnp.array([0.0]),         # Time of maximum radius (day) from start time
+    "ing": jnp.array([0.0]),           # Emergence rate (day)
+    "eg": jnp.array([0.0]),            # Decay rate (day)
+    "life": jnp.array([1e6]),          # Stable duration (day)
+    "kappa": 0.0,                      # Degree of differential rotation
+    "ld_spot": jnp.array([3.0, -4.54, 4.01, -1.35]) # Spot limb-darkening coefficients
+}
+
+flux = spotflux.relative_flux(params, t_array)
+
 ```
 
 
