@@ -27,7 +27,7 @@ def single_starspot_simulator_split(theta_single, time,n_spots):
     lat = jnp.clip(theta_single[i_v:i_lat], -jnp.pi/2. + eps, jnp.pi/2. - eps)
     lon = jnp.clip(theta_single[i_lon:i_rad], -jnp.pi + eps, jnp.pi - eps)
     rad = jnp.clip(theta_single[i_rad:i_tref], 1e-4, jnp.pi / 2.0)
-    tref = jnp.clip(theta_single[i_tref:i_ing], time1[0] + eps, time2[-1] - eps)
+    tref = jnp.clip(theta_single[i_tref:i_ing], time[0] + eps, time[-1] - eps)
     ing = jnp.exp(jnp.clip(theta_single[i_ing:i_eg], -5.0, 10.0))
     eg = jnp.exp(jnp.clip(theta_single[i_eg:i_life], -5.0, 10.0))
     life = jnp.exp(jnp.clip(theta_single[i_eg:i_life], -5.0, 10.0))
