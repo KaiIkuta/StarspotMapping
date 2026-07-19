@@ -3,7 +3,7 @@ import jax.numpy as jnp
 from functools import partial
 from spotmap.geometry import spotgeometry
 
-class spotflux(spotgeometry):
+class spotted_flux(spotgeometry):
     def __init__(self, eps=1e-15):
         super().__init__(eps)
 
