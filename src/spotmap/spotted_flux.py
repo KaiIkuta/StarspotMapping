@@ -58,7 +58,7 @@ class spotted_flux(spotgeometry):
             if "ld_spot" in axes_dict: axes_dict["ld_spot"] = ld_spot_axis
             if "f_spot"  in axes_dict: axes_dict["f_spot"]  = f_spot_axis
 
-            mapped_func = jax.vmap(MaculaModel._relative_flux_single, in_axes=(None, axes_dict, None))
+            mapped_func = jax.vmap(spotted_flux._relative_flux_single, in_axes=(None, axes_dict, None))
             return mapped_func(self, params, t)
         else:
             return self._relative_flux_single(params, t)
