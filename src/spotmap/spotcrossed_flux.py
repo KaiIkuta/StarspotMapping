@@ -4,7 +4,7 @@ from functools import partial
 from jaxoplanet.orbits.keplerian import Central, Body, System
 from spotmap.geometry import spotgeometry
 
-class transflux(spotgeometry):
+class spotcrossed_flux(spotgeometry):
     def __init__(self, eps=1e-15, n_annuli=300):
         super().__init__(eps) 
         self.n_annuli = n_annuli
@@ -12,16 +12,16 @@ class transflux(spotgeometry):
         self.mu_r = jnp.sqrt(1.0 - self.r_annuli**2)
 
     @partial(jax.jit, static_argnums=(0,))
-    def circleangle(self, r, p, z):
+    def circleangle(self, r, p, z): #Calculation of delta(r) from p (=Rp/Rs) and z (=sqrt(xp^2+xp^2)) 
         safe_denom = jnp.where(2.0 * z * r == 0.0, self.eps, 2.0 * z * r)
         cos_val = jnp.clip((r*r + z*z - p*p) / safe_denom, -1.0, 1.0)
         mid_val = jnp.arccos(cos_val)
         ans_p_gt_z = jnp.where(r < p - z, jnp.pi, jnp.where(r < p + z, mid_val, 0.0))
-        ans_p_le_z = jnp.where(r < z - p, 0.0, jnp.where(r < z + p, mid_val, 0.0))
+        ans_p_le_z = jnp.where(r < z - p, 0.0, jnp.where(r < z + p, mid_val, 0.0)) 
         return jnp.where(p > z, ans_p_gt_z, ans_p_le_z)
 
     @partial(jax.jit, static_argnums=(0,))
-    def ellipse_angle_macula(self, r, alpha, beta):
+    def ellipse_angle(self, r, alpha, beta): #Calculation of gamma(r) from alpha and beta (I note beta -> pi/2 - beta in Beky et al. 2014) 
         a = jnp.sin(alpha)
         b = jnp.sin(alpha) * jnp.cos(beta)
         z = jnp.cos(alpha) * jnp.sin(beta)
@@ -100,7 +100,7 @@ class transflux(spotgeometry):
         def calc_single_spot(alpha, beta, ex, ey, sz_val, px_val, py_val, pz_val):
             visible = (sz_val > 0) & (alpha > 0)
             
-            sa_t = jnp.where(visible, self.ellipse_angle_macula(self.r_annuli, alpha, beta), 0.0)
+            sa_t = jnp.where(visible, self.ellipse_angle(self.r_annuli, alpha, beta), 0.0)
             pa_t = self.circleangle(self.r_annuli, r_p, pz_val)
             
             z_ell = jnp.sqrt(ex**2 + ey**2)
