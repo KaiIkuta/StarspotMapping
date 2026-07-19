@@ -159,7 +159,7 @@ class spotcrossed_flux(spotgeometry):
         return (transit_flux / oot_base) - 1.0
 
     @partial(jax.jit, static_argnums=(0,))
-    def relative_transit_flux(self, params, t):
+    def relative_flux(self, params, t):
         ld_star = params.get("ld_star")
         f_spot = params.get("f_spot")
 
@@ -171,7 +171,7 @@ class spotcrossed_flux(spotgeometry):
             if "ld_star" in axes_dict: axes_dict["ld_star"] = ld_star_axis
             if "f_spot"  in axes_dict: axes_dict["f_spot"]  = f_spot_axis
 
-            mapped_func = jax.vmap(SpotrodModel._relative_transit_flux_single, in_axes=(None, axes_dict, None))
+            mapped_func = jax.vmap(spotcrossed_flux._relative_transit_flux_single, in_axes=(None, axes_dict, None))
             return mapped_func(self, params, t)
         else:
             return self._relative_transit_flux_single(params, t)
