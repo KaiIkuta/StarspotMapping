@@ -1,5 +1,5 @@
 import jax
 
 from .geometry import spotgeometry
-from .spot_flux import spotflux
-from .trans_flux import transflux
+from .spotted_flux import spotted_flux
+from .spotcrossed_flux import spotcrossed_flux
