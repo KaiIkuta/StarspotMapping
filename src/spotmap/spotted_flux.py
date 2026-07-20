@@ -8,7 +8,7 @@ class spotted_flux(spotgeometry):
         super().__init__(eps)
 
     def _spotted_flux_single(self, params, t):
-        alpha = self.alpha_t(params["radius"], params.get("t_ref", 0.0), params.get("ing", 0.0), params.get("eg", 0.0), params.get("life", 1e6), t)
+        alpha = self.alpha_t(params["radius"], params.get("t_ref", t[0]), params.get("ing", 1e3), params.get("eg", 1e3), params.get("life", 1e6), t)
         beta = jnp.arccos(self.cos_beta(params["phi"], params["lam"], params["period_rot"], params.get("kappa", 0.0), t, params["incl"]))
 
         zeta_pos = jnp.cos(beta + alpha)
