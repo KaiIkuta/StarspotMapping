@@ -70,16 +70,16 @@ class spotcrossed_flux(spotgeometry):
         return x_orb, y_orb, jnp.clip(z_los, -1.0 + self.eps, 1.0 - self.eps)
 
     @partial(jax.jit, static_argnums=(0,))
-    def planet_sky_coords(self, period_orb, t0, b, r_p, ecc, omega, t):
+    def planet_sky_coords(self, period_orb, t0, b, r_p, ecc, omega, r_s, rho_s, t):
         body = Body(
             period=period_orb, 
             time_transit=t0, 
             impact_param=b, 
-            radius=r_p, 
+            radius=r_p*r_s, 
             eccentricity=ecc, 
             omega_peri=omega
         )
-        system = System(Central()).add_body(body)
+        system = System(Central(density=rho_s,radius=r_s)).add_body(body)
         
         x_sys, y_sys, z_sys_los = system.relative_position(t)
         x_p, y_p = x_sys[0], y_sys[0]
@@ -140,7 +140,9 @@ class spotcrossed_flux(spotgeometry):
 
     def _relative_transit_flux_single(self, params, t):
         r_p = params["r_p"]
-        px, py, pz = self.planet_sky_coords(params["period_orb"], params["t0"], params["b"], r_p, params.get("ecc", 0.0), params.get("omega", 0.0), t)
+        r_s = params["r_s"]
+        rho_s = params["rho_s"]
+        px, py, pz = self.planet_sky_coords(params["period_orb"], params["t0"], params["b"], r_p, params.get("ecc", 0.0), params.get("omega", 0.0), r_s, rho_s, t)
         
         ld_star = params["ld_star"]
         f_r = 1.0 - ld_star[0]*(1.0 - self.mu_r**0.5) - ld_star[1]*(1.0 - self.mu_r) - ld_star[2]*(1.0 - self.mu_r**1.5) - ld_star[3]*(1.0 - self.mu_r**2)
