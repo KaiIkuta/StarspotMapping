@@ -82,8 +82,8 @@ class spotcrossed_flux(spotgeometry):
         system = System(Central(density=rho_s,radius=r_s)).add_body(body)
         
         x_sys, y_sys, z_sys_los = system.relative_position(t)
-        x_p, y_p = x_sys[0], y_sys[0]
-        z_p_los = z_sys_los[0]
+        x_p, y_p = x_sys[0]/r_s, y_sys[0]/r_s
+        z_p_los = z_sys_los[0]/r_s
         
         z_p = jnp.where(z_p_los > 0, jnp.sqrt(x_p**2 + y_p**2), 1000.0)
         return x_p, y_p, z_p
