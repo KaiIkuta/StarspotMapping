@@ -91,7 +91,7 @@ class spotcrossed_flux(spotgeometry):
     def _spotted_transit_flux_single(self, params, t, px, py, pz, f_r):
 
         alpha_arr = self.alpha_t(params["radius"], params.get("t_ref", t[0]), params.get("ing", 1e3), params.get("eg", 1e3), params.get("life", 1e6), t)
-        sx, sy, sz_los = self.spot_sky_coords(params["phi"], params["lam"], params["period_rot"], params.get("kappa", 0.0), t, params["incl"], params.get("spin_orbit", 0.0))
+        sx, sy, sz_los = self.spot_sky_coords(params["phi"], params["lam"], params["period_rot"], params.get("kappa", 0.0), t, params["incl"], params["spin_orbit"])
         beta_arr = jnp.arccos(sz_los)
         
         r_p = params["r_p"]
