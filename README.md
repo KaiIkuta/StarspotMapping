@@ -1,4 +1,4 @@
-# StarspotMapping: Mapping starspots from photometric variability 
+# spotmap: Mapping starspots from photometric variability 
 
 ## Installation
 
