@@ -51,7 +51,7 @@ spotcrossed_flux = spotcrossed_flux().relative_flux(params, time)
 
 ```
 
-
+# Papers
 
 ## Paper I
 Implementation of spotted flux with variable spot toward Kepler and TESS light curve ([Ikuta et al. 2020, ApJ, 902, 73](https://ui.adsabs.harvard.edu/abs/2020ApJ...902...73I/abstract)):
