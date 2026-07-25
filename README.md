@@ -11,7 +11,7 @@ pip install git+https://github.com/KaiIkuta/StarspotMapping.git
 ```python
 import jax.numpy as jnp
 import spotmap
-from spotmap.spot_flux import spotflux
+from spotmap import spotted_flux, spotcrossed_flux
 
 #Time series in 20 days
 time = jnp.linspace(0, 20, 1000)
