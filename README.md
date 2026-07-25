@@ -1,10 +1,5 @@
 # StarspotMapping: Mapping starspots from photometric variability 
 
-### The code to calculate the spotted flux is available in "macula.py" (version 0.0.0 on 23/10/27)
-### The code to visualize the hemisphere is also available in "visualize.py" (version 0.0.0 on 23/11/17)
-### The inference code with a parallel tempering or No U-turn sampler in JAX/NumPyro is also available in "Example_NumPyro.py" (version 0.0.0 on 24/02/14)
-
-
 ## Installation
 
 ```bash
@@ -19,7 +14,7 @@ import spotmap
 from spotmap.spot_flux import spotflux
 
 #Time series in 20 days
-t_array = jnp.linspace(0, 20, 1000)
+time = jnp.linspace(0, 20, 1000)
 
 #Parameters
 params = {
@@ -38,9 +33,21 @@ params = {
     "life": jnp.array([1e6]),          # Stable duration (day)
     "kappa": 0.0,                      # Degree of differential rotation
     "ld_spot": jnp.array([3.0, -4.54, 4.01, -1.35]) # Spot limb-darkening coefficients
+    "r_p": 0.1957, #Planet radius / Stellar radius 
+    "period_orb": 4.54, #Orbital period (day)
+    "t0":  3379.0783311999066, #Transit central time (day)
+    "b": 0.40, #Impact parameter
+    "r_s": 0.302, #Stellar radius (solar unit)
+    "rho_s":8.82, #Stellar density (solar unit)
+    "spin_orbit": 0.0 #alignment from stellar rotation axis (rad)
+
 }
 
-flux = spotflux().relative_flux(params, t_array)
+#Spotted flux (Rotational modulation)
+spotted_flux = spotted_flux().relative_flux(params, time)
+
+#Transit flux (Spot crossing)
+spotcrossed_flux = spotcrossed_flux().relative_flux(params, time)
 
 ```
 
