@@ -5,10 +5,10 @@ from jaxoplanet.orbits.keplerian import Central, Body, System
 from spotmap.geometry import spotgeometry
 
 class spotcrossed_flux(spotgeometry):
-    def __init__(self, eps=1e-15, n_annuli=300):
+    def __init__(self, eps=1e-15, n_annuli=30000):
         super().__init__(eps) 
         self.n_annuli = n_annuli
-        self.r_annuli = jnp.linspace(1e-5, 0.99999, self.n_annuli)
+        self.r_annuli = jnp.linspace(1e-6, 0.99999, self.n_annuli)
         self.mu_r = jnp.sqrt(1.0 - self.r_annuli**2)
 
     @partial(jax.jit, static_argnums=(0,))
