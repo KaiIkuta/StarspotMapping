@@ -14,7 +14,7 @@ class spotcrossed_flux(spotgeometry):
     @partial(jax.jit, static_argnums=(0,))
     def circleangle(self, r, p, z): #Calculation of delta(r) from p (=Rp/Rs) and z (=sqrt(xp^2+xp^2)) 
         safe_denom = jnp.where(2.0 * z * r == 0.0, self.eps, 2.0 * z * r)
-        cos_val = jnp.clip((r*r + z*z - p*p) / safe_denom, -1.0, 1.0)
+        cos_val = jnp.clip((r*r + z*z - p*p) / safe_denom, -1.0+self.eps, 1.0-self.eps)
         mid_val = jnp.arccos(cos_val)
         ans_p_gt_z = jnp.where(r < p - z, jnp.pi, jnp.where(r < p + z, mid_val, 0.0))
         ans_p_le_z = jnp.where(r < z - p, 0.0, jnp.where(r < z + p, mid_val, 0.0)) 
@@ -41,13 +41,13 @@ class spotcrossed_flux(spotgeometry):
         safe_r = jnp.where(r == 0.0, self.eps, r)
         
         val_arccos = (z - (-z + jnp.sqrt(val_inside_sqrt)) / safe_A) / safe_r
-        ans_intersect = jnp.arccos(jnp.clip(val_arccos, -1.0, 1.0))
+        ans_intersect = jnp.arccos(jnp.clip(val_arccos, -1.0+self.eps, 1.0-self.eps))
         
         ans_main = jnp.where(r < bound1, jnp.pi,
                      jnp.where(r < bound2, 0.0,
                      jnp.where(r < bound3, ans_intersect, 0.0)))
         
-        ans_b0 = jnp.where(r >= z, jnp.arccos(jnp.clip(z / safe_r, -1.0, 1.0)), 0.0)
+        ans_b0 = jnp.where(r >= z, jnp.arccos(jnp.clip(z / safe_r, -1.0+self.eps, 1.0-self.eps)), 0.0)
         ans = jnp.where(b_0_mask, ans_b0, ans_main)
         ans = jnp.where(alpha <= 0.0, 0.0, ans)
         return jnp.where(concentric_mask, jnp.where(r < a, jnp.pi, 0.0), ans)
@@ -92,7 +92,7 @@ class spotcrossed_flux(spotgeometry):
 
         alpha_arr = self.alpha_t(params["radius"], params.get("t_ref", t[0]), params.get("ing", 1e3), params.get("eg", 1e3), params.get("life", 1e6), t)
         sx, sy, sz_los = self.spot_sky_coords(params["phi"], params["lam"], params["period_rot"], params.get("kappa", 0.0), t, params["incl"], params["spin_orbit"])
-        beta_arr = jnp.arccos(sz_los)
+        beta_arr = jnp.arccos(jnp.clip(sz_los,-1.0+self.eps,1.0-self.eps))
         
         r_p = params["r_p"]
         f_spot = params["f_spot"]
@@ -108,7 +108,7 @@ class spotcrossed_flux(spotgeometry):
             
             denom = jnp.where(2.0 * pz_val * z_ell == 0.0, 1.0, 2.0 * pz_val * z_ell)
             ps_angle = jnp.where((z_ell == 0.0) | (pz_val == 0.0), 0.0, 
-                                 jnp.arccos(jnp.clip((pz_val**2 + z_ell**2 - d_sq) / denom, -1.0, 1.0)))
+                                 jnp.arccos(jnp.clip((pz_val**2 + z_ell**2 - d_sq) / denom, -1.0+self.eps, 1.0-self.eps)))
             
             s_c = f_spot - 1.0
             oot_contrib = jnp.sum(s_c * sa_t * self.r_annuli * f_r)
